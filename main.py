@@ -4,6 +4,7 @@ from http.client import responses
 import requests
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QFont
 
 class weatherApp(QWidget):
     def __init__(self):
@@ -43,6 +44,9 @@ class weatherApp(QWidget):
         self.emojiLabel.setObjectName("emojiLabel")
         self.descriptionLabel.setObjectName("descriptionLabel")
 
+        emoji_font = QFont("Apple Color Emoji", 100)
+        self.emojiLabel.setFont(emoji_font)
+
         self.setStyleSheet("""{
             QLabel, QPushButton{
                 font-family: calibri;
@@ -63,7 +67,7 @@ class weatherApp(QWidget):
             }
             QLabel#emojiLabel{
                 font-size: 100px;
-                font-family: Segoe UI emoji;
+                font-family: "Apple Color Emoji";
             }
             QLabel#descriptionLabel{
                 font-size: 50px;
